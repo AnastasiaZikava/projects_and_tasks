@@ -1,0 +1,2 @@
+class AddStatusToTask < ApplicationRecord
+end
