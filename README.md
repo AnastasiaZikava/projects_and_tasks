@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Веб-приложение по управлению проектами и задачами, в котором можно: 
+* создавать\обновлять\удалять проекты;
+* добавлять задачи к проектам;
+* обновлять задачи;
+* удалять задачи(если кто-то был назначенный на эту задачу, то он должен автоматически сниматься с нее);
+* назначать задачи на других людей.
