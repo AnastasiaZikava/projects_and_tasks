@@ -1,3 +1,119 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.project_table tr{
+    background-color: rgb(228, 227, 227);
+}
+
+.btn_all_projects{
+    background-color: whitesmoke;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    color: rgb(107, 103, 103);
+}
+
+.btn_sign_out{
+    background-color: whitesmoke;
+    color: white;  
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    color: rgb(107, 103, 103);
+}
+
+.btn_new_project{
+    background-color: whitesmoke;
+    color: white;  
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    color: rgb(107, 103, 103);
+}
+
+.btn_show_project{
+    background-color: whitesmoke;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    height: 35px;
+    color: rgb(107, 103, 103);
+}
+
+.btn_edit_project{
+    background-color: whitesmoke;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    height: 35px;
+    color: rgb(107, 103, 103);
+}
+
+.btn_delete_project{
+    background-color: whitesmoke;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    height: 35px;
+    color: rgb(107, 103, 103);
+}
+
+.project_block{
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+.new_edit_project{
+    background-color: white;
+    border-radius: 30px;
+    font-family: "Verdana";
+    padding-bottom: 30px;
+}
+
+#project_name{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#project_summary{
+    width: 90%;
+    height:300px;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#start_date{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#end_date{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#error_text{
+    font-size: 20px;
+    color: red;
+}

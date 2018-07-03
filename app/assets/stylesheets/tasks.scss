@@ -1,3 +1,125 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.task_table tr{
+    background-color: rgb(228, 227, 227);
+}
+
+.task_table{
+    word-wrap:break-word;
+    width: 100%;
+}
+
+.btn_delete_task{
+    background-color: whitesmoke;
+    color: white;
+    padding: 9px 20px;
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    color: rgb(107, 103, 103);
+}
+
+.btn_edit_task{
+    background-color: whitesmoke;
+    color: white;
+    padding: 9px 20px;
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    color: rgb(107, 103, 103);
+}
+  
+.new_edit_task{
+    background-color: white;
+    border-radius: 30px;
+    font-family: "Verdana";
+    padding-bottom: 30px;
+}
+
+
+
+#task_title{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#task_description{
+    width: 90%;
+    height:300px;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#task_user_id{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#task_status{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+input[name="task[title]"]{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+textarea[name="task[description]"]{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+select[name="task[user_id]"]{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+select[name="task[status]"]{
+    width: 90%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+

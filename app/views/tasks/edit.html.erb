@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="model-body new_edit_task col-sm-9">
+      <%= form_for  [@project, @task] do |form|  %>
+        <div id="title" class="col-md-12 text-center">
+            <h1>Update a task</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8 ml-5">
+            <% if @task.errors.any? %>
+              <div id="error_explanation">
+                <div id="error_text">
+                  <%= pluralize(@task.errors.count, "error") %>
+                  prohibited this project from being saved:
+                </div>
+                <ul>
+                <% @task.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        </div>
+                       
+        <div class="container px-5 py-3">
+          <% if current_user.admin? %>
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label 'Title' %>
+              </div>
+              <div class="col-md-10 ml-auto">
+                <%= form.text_field :title %>
+              </div>
+            </div>   
+
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label 'Description' %>
+              </div>
+              <div class="col-md-10 ml-auto">
+                <%= form.text_area :description %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                Assign to
+              </div>
+              <div class="col-md-10 ml-auto">
+                <%= form.collection_select(:user_id, User.all, :id, :first_name, prompt: 'assigned')%>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label 'Status: '%>
+              </div>
+              <div class="col-md-10 ml-auto">
+                <%= form.select :status, ['new', 'in progress', 'done']%>
+              </div>
+            </div>
+
+          <% else %>
+
+          <div class="row">
+            <div class="col-md-2 ml-auto">
+              <%= @task.title %>
+            </div>
+            <div class="col-md-10 ml-auto">
+              <%= @task.description %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2 ml-auto">
+              Assign to:
+            </div>
+            <div class="col-md-10 ml-auto">
+              <%= form.collection_select(:user_id, User.all, :id, :first_name, prompt: 'assigned')%>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2 ml-auto">
+              <%= form.label 'Status: '%>
+            </div>
+            <div class="col-md-10 ml-auto">
+              <%= form.select :status, ['new', 'in progress', 'done']%>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="row pt-4">
+          <div class="col-md-12 text-center">
+            <%= form.submit %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

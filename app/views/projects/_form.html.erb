@@ -1,37 +1,80 @@
-<%= form_with(model: project, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="container">
+    
+<div class="row justify-content-center">
+    <div class="model-body new_edit_project col-sm-9">
+      <%= form_with(model: project, local: true) do |form| %>
+        <div class="row">
+          <div id="title" class="col-md-12 text-center mb-4">
+            <h1>
+              <% if local_assigns[:title] %>
+                <%= title %>
+              <% end %>
+            </h1>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-8 ml-5">
+            <% if project.errors.any? %>
+              <div id="error_explanation">
+                <div id="error_text">
+                  <%= pluralize(project.errors.count, "error") %>
+                  prohibited this project from being saved:
+                </div>
+                <ul>
+                <% project.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        </div>
+  
+        <div class="container px-5 py-3">
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label :name %>
+              </div>
+              <div class="col-md-10 ml-auto">
+                <%= form.text_field :name, id: :project_name %>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label :summary %>
+              </div>
+              <div class="col-md-10 ml-auto">
+                <%= form.text_area :summary, id: :project_summary %>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label :start_date %>
+              </div>
+              <div class="start_date col-md-10 ml-auto">
+                <%= form.date_select :start_date, id: :project_start_date %>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-2 ml-auto">
+                <%= form.label :end_date %>
+              </div>
+              <div class="end_date col-md-10 ml-auto">
+                <%= form.date_select :end_date, id: :project_end_date %>
+              </div>
+            </div>
+  
+            <div class="row pt-4">
+              <div class="col-md-12 text-center">
+                <%= form.submit %>
+              </div>                     
+            </div>
       <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :project_name %>
   </div>
-
-  <div class="field">
-    <%= form.label :summary %>
-    <%= form.text_area :summary, id: :project_summary %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date, id: :project_start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date, id: :project_end_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

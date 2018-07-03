@@ -1,0 +1,55 @@
+<html lang="en">
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="model-body col-sm-7">
+          <div id="title" class="col-md-12 text-center">
+            <h2>Log in</h2>
+          </div>      
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-11 ml-auto">
+                  <%= f.label :email %>
+                </div>
+                <div class="col-md-11 ml-auto">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-11 ml-auto">
+                  <%= f.label :password %>
+                </div>
+                <div class="col-md-11 ml-auto">
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
+              </div>
+              <div class="container">
+                <% if devise_mapping.rememberable? -%>
+                  <div class="row mt-2 pl-3">
+                    <div class="check-box md-2 ml-auto">
+                      <%= f.check_box :remember_me %>
+                    </div>
+                    <div class="col-md-10 ml-auto">
+                      <%= f.label :remember_me %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+      
+              <div class="row">
+                <div class="login col-md-9 ml-3">
+                  <%= f.submit "Log in" %>
+                </div> 
+                <div class="pt-3">
+                  <%= render "devise/shared/links" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

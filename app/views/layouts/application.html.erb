@@ -3,12 +3,26 @@
   <head>
     <title>ProjectsAndTasks</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <% if user_signed_in? %>
+        <div class="login_panel row px-5 py-1">
+          <div class="user_name col-md-10">
+            Hello, <%= current_user.first_name%> !
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <%= link_to 'Projects', projects_path, class: "btn btn_all_projects col-md-5 mx-2" %>
+              <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "btn btn_sign_out col-md-5 mx-2" %>
+            </div>
+          </div>
+        </div>      
+      <% end %>
+      <%= yield %>
+    </div>   
   </body>
 </html>

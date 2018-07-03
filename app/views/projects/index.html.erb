@@ -1,33 +1,35 @@
-<p id="notice"><%= notice %></p>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<div class="row mt-4">
+  <div class="row justify-content-center col-md-9 mx-4">
+    <table class="table project_table">
+      <thead class="thead-light">
+        <tr>
+          <th>Name</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>  
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr>
+            <td class="align-middle"><%= project.name%></td>
+            <td class="align-middle"><%= project.start_date %></td>
+            <td class="align-middle"><%= project.end_date %></td>
+            <td class="py-1"><%= link_to 'Show', project, class: "btn btn_show_project" %></td>
+            <% if current_user.admin? %>
+              <td class="py-1"><%= link_to 'Edit', edit_project_path(project), class: "btn btn_edit_project" %></td>
+              <td class="py-1"><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' },
+                class: "btn btn_delete_project" %></td>
+            <% end %>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% if current_user.admin? %>
+    <%= link_to 'New Project', new_project_path, class: "btn btn_new_project col-md-2 mx-4" %>
+  <% end %>
+</div>
 
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Summary</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.summary %></td>
-        <td><%= project.start_date %></td>
-        <td><%= project.end_date %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
